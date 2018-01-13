@@ -1,5 +1,5 @@
 class Todoable
     def self.hello_world
-        puts 'Hello, world'
+        return 'Hello, world!'
     end
 end
