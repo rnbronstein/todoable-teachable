@@ -1,4 +1,3 @@
-require 'rest-client'
 require 'todoable/http/response'
 
 module Todoable
