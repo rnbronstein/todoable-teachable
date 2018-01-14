@@ -1,4 +1,15 @@
 #!/usr/bin/env ruby
 
 require 'todoable'
-puts Todoable.hello_world
+require 'todoable/client'
+require 'todoable/request'
+require 'todoable/auth'
+
+client = Todoable::Client.new do |config|
+    config.username = 'rnbronstein@gmail.com'
+    config.password = 'todoable'
+end
+
+auth = Todoable::Auth.new(client)
+
+auth.inspect

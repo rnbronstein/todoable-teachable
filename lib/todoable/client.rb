@@ -1,16 +1,11 @@
 module Todoable
     class Client
-        attr_accessor :username, :password
+        attr_accessor :username, :password, :token, :expires_at
 
-        # Initializes a new Client object using passed options hash or a block
-        #
-        # @param block
+        # Initializes a new Client object using a block
         # @return [Todoable::Client]
-        def initialize(options = {})
-            options.each do |k, v|
-                instance_variable_set("@#{k}", v)
-            end
-            yield self if block_given?
+        def initialize(&block)
+            yield self
         end
 
         # @return [Hash]
